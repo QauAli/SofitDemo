@@ -29,6 +29,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 public class BaseActivity extends AppCompatActivity {
 
+
+
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Fragment mSelectedFrag = null;
     BottomNavigationView.OnNavigationItemSelectedListener navlistner =
