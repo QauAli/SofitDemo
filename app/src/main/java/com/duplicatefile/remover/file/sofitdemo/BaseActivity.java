@@ -1,13 +1,5 @@
 package com.duplicatefile.remover.file.sofitdemo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -27,11 +19,45 @@ import com.duplicatefile.remover.file.sofitdemo.utils.AllStrings;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 public class BaseActivity extends AppCompatActivity {
 
     private ActionBarDrawerToggle actionBarDrawerToggle;
     private Fragment mSelectedFrag = null;
+    BottomNavigationView.OnNavigationItemSelectedListener navlistner =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+                    switch (item.getItemId()) {
+                        case R.id.home:
+                            mSelectedFrag = new HomeFragment();
+                            //Toast.makeText(BottomNavigationActivity.this, "all pdf", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        case R.id.services:
+                            mSelectedFrag = new ServicesFragment();
+                            //Toast.makeText(BottomNavigationActivity.this, "recent", Toast.LENGTH_SHORT).show();
+                            break;
+
+                        case R.id.posts:
+                            mSelectedFrag = new PostsFragment();
+                            //Toast.makeText(BottomNavigationActivity.this, "favourites", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            mSelectedFrag).commit();
+
+                    return true;
+                }
+            };
     private Context mContext;
     private ActivityBaseBinding mBinding;
 
@@ -67,53 +93,24 @@ public class BaseActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                switch (id) {
-                    case R.id.nav_home: {
-//                        Intent myIntent = new Intent(mContext, ChatActivity.class);
-//                        mContext.startActivity(myIntent);
+                switch (item.getItemId()) {
+                    case R.id.nav_home:
+                        mSelectedFrag = new HomeFragment();
+                        //Toast.makeText(BottomNavigationActivity.this, "all pdf", Toast.LENGTH_SHORT).show();
                         break;
-                    }
-                    case R.id.nav_services: {
-//                        Intent myIntent = new Intent(mContext, MultimediaActivity.class);
-//                        myIntent.putExtra("type", "images_display"); //Optional parameters
-//                        mContext.startActivity(myIntent);
+
+                    case R.id.nav_services:
+                        mSelectedFrag = new ServicesFragment();
+                        //Toast.makeText(BottomNavigationActivity.this, "recent", Toast.LENGTH_SHORT).show();
                         break;
-                    }
-                    default:
-                        return true;
                 }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        mSelectedFrag).commit();
+
                 return true;
             }
         });
     }
-
-    BottomNavigationView.OnNavigationItemSelectedListener navlistner =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                    switch (item.getItemId()) {
-                        case R.id.home:
-                            mSelectedFrag = new HomeFragment();
-                            //Toast.makeText(BottomNavigationActivity.this, "all pdf", Toast.LENGTH_SHORT).show();
-                            break;
-
-                        case R.id.services:
-                            mSelectedFrag = new ServicesFragment();
-                            //Toast.makeText(BottomNavigationActivity.this, "recent", Toast.LENGTH_SHORT).show();
-                            break;
-
-                        case R.id.posts:
-                            mSelectedFrag = new PostsFragment();
-                            //Toast.makeText(BottomNavigationActivity.this, "favourites", Toast.LENGTH_SHORT).show();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            mSelectedFrag).commit();
-
-                    return true;
-                }
-            };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -143,7 +140,6 @@ public class BaseActivity extends AppCompatActivity {
         setIcon(AllStrings.HOME_IMAGE_URL, navgationHomeItem);
         final MenuItem navgationServiceItem = navigationMenu.getItem(1);
         setIcon(AllStrings.SERVICE_IMAGE_URL, navgationServiceItem);
-
 
 
     }
