@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.duplicatefile.remover.file.sofitdemo.Adapters.CvAdapter;
 import com.duplicatefile.remover.file.sofitdemo.Adapters.ImageAdapter;
 import com.duplicatefile.remover.file.sofitdemo.R;
 import com.duplicatefile.remover.file.sofitdemo.databinding.FragmentHomeBinding;
@@ -55,9 +56,11 @@ public class HomeFragment extends Fragment {
         mBinding.rvImages.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, true));
         mBinding.rvImages.setAdapter(mAdapter);
 
+        CvAdapter cvAdapter;
+        cvAdapter = new CvAdapter(mStringList);
         mBinding.rvCv.setHasFixedSize(true);
         mBinding.rvCv.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, true));
-        mBinding.rvCv.setAdapter(mAdapter);
+        mBinding.rvCv.setAdapter(cvAdapter);
 
 
 
