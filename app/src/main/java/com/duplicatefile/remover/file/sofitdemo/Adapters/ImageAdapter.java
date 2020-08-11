@@ -33,6 +33,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
                 .load(s)
                 .centerCrop()
                 .into(holder.mBinding.iv);
+
+        holder.mBinding.tv.setText(s);
     }
 
     @Override
