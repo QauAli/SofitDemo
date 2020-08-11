@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/_110sdp"
     android:layout_height="@dimen/_110sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,16 +10,18 @@
         android:id="@+id/iv"
         app:shapeAppearanceOverlay="@style/roundedImageView"
         android:layout_centerInParent="true"
-        android:layout_width="@dimen/_110sdp"
-        android:layout_height="@dimen/_110sdp"/>
+        android:layout_width="@dimen/_105sdp"
+        android:layout_height="@dimen/_105sdp"/>
 
     <TextView
         android:id="@+id/tv"
+        android:background="@drawable/layout_bg"
         android:textColor="@android:color/white"
-        android:background="#80000000"
+        android:textAlignment="center"
         android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/_105sdp"
         android:maxLines="3"
         android:singleLine="false"/>
 
