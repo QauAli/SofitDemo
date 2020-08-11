@@ -55,7 +55,15 @@ public class HomeFragment extends Fragment {
         mBinding.rvImages.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, true));
         mBinding.rvImages.setAdapter(mAdapter);
 
-        setViews();
+        mBinding.rvCv.setHasFixedSize(true);
+        mBinding.rvCv.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, true));
+        mBinding.rvCv.setAdapter(mAdapter);
+
+
+
+
+
+//        setViews();
         return view;
     }
     private void setViews() {
@@ -63,15 +71,6 @@ public class HomeFragment extends Fragment {
         circularProgressDrawable.setStrokeWidth(5f);
         circularProgressDrawable.setCenterRadius(30f);
         circularProgressDrawable.start();
-
-//        Glide.with(mContext)
-//                .applyDefaultRequestOptions(RequestOptions.centerCropTransform()
-//                        .diskCacheStrategy(DiskCacheStrategy.RESOURCE))
-//                .load("http://goo.gl/gEgYUd")
-//                .centerCrop()
-//                .placeholder(circularProgressDrawable)
-//                .into(mBinding.iv1);
-
 
     }
 }

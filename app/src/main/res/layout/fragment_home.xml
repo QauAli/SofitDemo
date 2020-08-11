@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,77 +24,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
+    <TextView
+        android:id="@+id/tv_payment_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment History"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_images" />
 
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/linearLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:layout_marginTop="@dimen/_20sdp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.5"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent">-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_110sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_payment_history" />
 
-    <!--        <HorizontalScrollView-->
-    <!--            android:id="@+id/horizontalScrollView"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="@dimen/_110sdp">-->
 
-    <!--            <LinearLayout-->
-    <!--                android:layout_width="match_parent"-->
-    <!--                android:layout_height="match_parent"-->
-    <!--                android:orientation="horizontal">-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/iv1"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/iv2"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/iv3"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/button4"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/button5"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/button6"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/button7"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-
-    <!--                <ImageView-->
-    <!--                    android:id="@+id/button8"-->
-    <!--                    android:layout_width="match_parent"-->
-    <!--                    android:layout_height="match_parent"-->
-    <!--                    android:src="@mipmap/ic_launcher" />-->
-    <!--            </LinearLayout>-->
-
-    <!--        </HorizontalScrollView>-->
-    <!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
