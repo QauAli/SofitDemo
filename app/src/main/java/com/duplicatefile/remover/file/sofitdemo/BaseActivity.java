@@ -13,7 +13,6 @@ import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.duplicatefile.remover.file.sofitdemo.Fragments.HomeFragment;
 import com.duplicatefile.remover.file.sofitdemo.Fragments.PostsFragment;
-import com.duplicatefile.remover.file.sofitdemo.Fragments.PostsKotlin;
 import com.duplicatefile.remover.file.sofitdemo.Fragments.ServicesFragment;
 import com.duplicatefile.remover.file.sofitdemo.databinding.ActivityBaseBinding;
 import com.duplicatefile.remover.file.sofitdemo.utils.AllStrings;
@@ -49,7 +48,7 @@ public class BaseActivity extends AppCompatActivity {
                             break;
 
                         case R.id.posts:
-                            mSelectedFrag = new PostsKotlin();
+                            mSelectedFrag = new PostsFragment();
                             //Toast.makeText(BottomNavigationActivity.this, "favourites", Toast.LENGTH_SHORT).show();
                             break;
                     }
